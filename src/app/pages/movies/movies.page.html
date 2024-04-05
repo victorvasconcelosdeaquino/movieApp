@@ -51,15 +51,15 @@
   <ion-toolbar>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="movies">
+        <ion-tab-button [routerLink]="['/movies']">
           <ion-icon name="film"></ion-icon>
           Movies
         </ion-tab-button>
-        <ion-tab-button tab="movie-list">
+        <ion-tab-button [routerLink]="['/movie-list']">
           <ion-icon name="list"></ion-icon>
           My List
         </ion-tab-button>
-        <ion-tab-button tab="movie-watched">
+        <ion-tab-button [routerLink]="['/movie-watched']">
           <ion-icon name="eye"></ion-icon>
           Watched
         </ion-tab-button>

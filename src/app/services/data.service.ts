@@ -20,7 +20,7 @@ export class DataService {
 
   getData(){
     console.log('GET DATA');
-   return this.storage.get(STORAGE_KEY) || [];
+    return this.storage.get(STORAGE_KEY) || [];
   }
 
   async addItem(item: any, type: string){
