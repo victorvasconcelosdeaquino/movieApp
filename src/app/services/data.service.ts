@@ -1,7 +1,7 @@
 import { Storage } from '@ionic/storage-angular';
 import { Injectable, OnInit } from '@angular/core';
 
-const STORAGE_KEY = 'mylist';
+const STORAGE_KEY = 'list';
 
 @Injectable({
   providedIn: 'root'

@@ -23,12 +23,11 @@ export class MoviesPage implements OnInit {
   }
 
   async addWatched(item: any){
-    debugger;
-    await this.dataService.addItem(item.imdbID);
+    await this.dataService.addItem(item);
     this.searchChanged();
   }
 
   async removeWatched(item: any){
-    this.dataService.removeItem(item.imdbID);
+    this.dataService.removeItem(item);
   }
 }
