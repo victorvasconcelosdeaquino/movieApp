@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Softflix - Watched</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+
+  <ion-list>
+ 
+    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.imdbID]">
+      <ion-avatar slot="start">
+        <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'">
+      </ion-avatar>
+ 
+      <ion-label text-wrap>
+        <h3>{{ item.Title }}</h3>
+        {{ item.Year }}
+      </ion-label>
+ 
+      <ion-icon slot="end" *ngIf="item.Type == 'movie'" name="videocam"></ion-icon>
+      <ion-icon slot="end" *ngIf="item.Type == 'series'" name="tv"></ion-icon>
+      <ion-icon slot="end" *ngIf="item.Type == 'episode'" name="game-controller"></ion-icon>
+    </ion-item>
+ 
+  </ion-list>
+ 
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="movies">
+          <ion-icon name="film"></ion-icon>
+          Movies
+        </ion-tab-button>
+        <ion-tab-button tab="list">
+          <ion-icon name="list"></ion-icon>
+          My List
+        </ion-tab-button>
+        <ion-tab-button tab="movie-watched">
+          <ion-icon name="eye"></ion-icon>
+          Watched
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
