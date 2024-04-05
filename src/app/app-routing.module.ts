@@ -16,16 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/movies/movies.module').then( m => m.MoviesPageModule)
   },
   {
-    path: 'list',
-    loadChildren: () => import('./pages/movies/movies.module').then( m => m.MoviesPageModule)
-  },
-  {
     path: 'movies/:id',
     loadChildren: () => import('./pages/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
   },
   {
     path: 'movie-watched',
     loadChildren: () => import('./pages/movie-watched/movie-watched.module').then( m => m.MovieWatchedPageModule)
+  },
+  {
+    path: 'movie-list',
+    loadChildren: () => import('./pages/movie-list/movie-list.module').then( m => m.MovieListPageModule)
   },
 ];
 

@@ -13,16 +13,19 @@ export class DataService {
   }
 
   init(){
+    console.log('INIT');
     this.storage.create();
+    console.log('DONE');
   }
 
   getData(){
+    console.log('GET DATA');
    return this.storage.get(STORAGE_KEY) || [];
   }
 
-  async addItem(item: any){
+  async addItem(item: any, type: string){
     const storedData = await this.storage.get(STORAGE_KEY) || [];
-    storedData.push(item);
+    storedData.push(item, type);
     return this.storage.set(STORAGE_KEY, storedData);
   }
 
