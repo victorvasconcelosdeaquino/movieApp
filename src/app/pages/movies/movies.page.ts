@@ -41,17 +41,10 @@ export class MoviesPage implements OnInit {
     this.searchChanged();
   }
 
-  async removeWatched(item: any, type: string){
-    this.dataService.removeWatched(item, type);
-  }
-
   async addList(item: any, type: string){
     await this.dataService.addList(item, type);
     this.presentAlert('MyList');
     this.searchChanged();
   }
 
-  async removeList(item: any, type: string){
-    this.dataService.removeList(item, type);
-  }
 }

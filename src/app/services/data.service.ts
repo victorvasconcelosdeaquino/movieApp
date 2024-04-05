@@ -20,7 +20,6 @@ export class DataService {
 
   getData(key: string){
     console.log('GET DATA');
-    debugger
     return this.storage.get(key) || [];
   }
 

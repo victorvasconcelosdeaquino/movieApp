@@ -14,7 +14,16 @@ export class MovieListPage implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.init();
+  }  
+
+  init(){    
     this.results = this.dataService.getData('list');
+  }
+
+  async removeList(item: any, type: string){
+    this.dataService.removeList(item, type);
+    this.init();
   }
 
 }

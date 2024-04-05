@@ -14,8 +14,16 @@ export class MovieWatchedPage implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    debugger
+    this.init();
+  }  
+
+  init(){    
     this.results = this.dataService.getData('watched');
+  }
+
+  async removeWatched(item: any, type: string){
+    this.dataService.removeWatched(item, type);
+    this.init();
   }
 
 }
