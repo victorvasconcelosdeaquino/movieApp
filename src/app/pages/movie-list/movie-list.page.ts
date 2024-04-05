@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 export class MovieListPage implements OnInit {
   
   results: any;
-  
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.results = this.dataService.getData();
+    this.results = this.dataService.getData('list');
   }
 
 }

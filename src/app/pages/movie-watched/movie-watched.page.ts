@@ -15,7 +15,7 @@ export class MovieWatchedPage implements OnInit {
 
   ngOnInit() {
     debugger
-    this.results = this.dataService.getData();
+    this.results = this.dataService.getData('watched');
   }
 
 }

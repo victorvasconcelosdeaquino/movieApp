@@ -36,22 +36,22 @@ export class MoviesPage implements OnInit {
   }
 
   async addWatched(item: any, type: string){
-    await this.dataService.addItem(item, type);
+    await this.dataService.addWatched(item, type);
     this.presentAlert('Wached');
     this.searchChanged();
   }
 
-  async removeWatched(item: any){
-    this.dataService.removeItem(item);
+  async removeWatched(item: any, type: string){
+    this.dataService.removeWatched(item, type);
   }
 
   async addList(item: any, type: string){
-    await this.dataService.addItem(item, type);
+    await this.dataService.addList(item, type);
     this.presentAlert('MyList');
     this.searchChanged();
   }
 
-  async removeList(item: any){
-    this.dataService.removeItem(item);
+  async removeList(item: any, type: string){
+    this.dataService.removeList(item, type);
   }
 }

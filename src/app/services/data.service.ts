@@ -18,20 +18,33 @@ export class DataService {
     console.log('DONE');
   }
 
-  getData(){
+  getData(key: string){
     console.log('GET DATA');
-    return this.storage.get(STORAGE_KEY) || [];
+    debugger
+    return this.storage.get(key) || [];
   }
 
-  async addItem(item: any, type: string){
-    const storedData = await this.storage.get(STORAGE_KEY) || [];
-    storedData.push(item, type);
-    return this.storage.set(STORAGE_KEY, storedData);
+  async addWatched(item: any, key: string){
+    const storedData = await this.storage.get(key) || [];
+    storedData.push(item, key);
+    return this.storage.set(key, storedData);
   }
 
-  async removeItem(index: any){
-    const storedData = await this.storage.get(STORAGE_KEY) || [];
+  async removeWatched(index: any, key: string){
+    const storedData = await this.storage.get(key) || [];
     storedData.splice(index, 1);
-    return this.storage.set(STORAGE_KEY, storedData);
+    return this.storage.set(key, storedData);
+  }
+
+  async addList(item: any, key: string){
+    const storedData = await this.storage.get(key) || [];
+    storedData.push(item, key);
+    return this.storage.set(key, storedData);
+  }
+
+  async removeList(index: any, key: string){
+    const storedData = await this.storage.get(key) || [];
+    storedData.splice(index, 1);
+    return this.storage.set(key, storedData);
   }
 }
